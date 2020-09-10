@@ -8,6 +8,23 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  // strip out non-alphabet on both string 
+  // sort new string
+  // using helper fucntion
+  const newA = sortAlphabet(stringA);
+  const newB = sortAlphabet(stringB);
+  // compare if both string are strictly EQ, if true, return true ortherwise false
+  return newA === newB;
+}
+
+function sortAlphabet(str) {
+  // strip out non string 
+  // truen to lowercase
+  // return sort alphabet
+
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
+// console.log(sortAlphabet('Hello!!!'))
 
 module.exports = anagrams;
